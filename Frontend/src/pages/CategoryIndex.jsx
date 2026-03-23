@@ -36,9 +36,10 @@ export default function CategoryIndex(){
             categories.map((categorie, index)=>(
                 <div key={index}>
                     <p >{categorie.name} - {categorie.description}</p>
-                    <button onClick={() => handleDelete(categorie.id)}>Delete</button>
+                    <button className="btn btn-danger" onClick={() => handleDelete(categorie.id)}>Delete</button>
                 </div>
             ))
+            
         }
 
     
