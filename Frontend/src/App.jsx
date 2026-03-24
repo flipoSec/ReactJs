@@ -5,6 +5,7 @@ import heroImg from './assets/hero.png'
 import './App.css'
 import CategoryIndex from './pages/CategoryIndex'
 import CategoryCreate from './pages/CategoryCreate'
+import ProductIndex from './pages/ProductIndex'
 
 function App() {
   
@@ -14,6 +15,7 @@ function App() {
     
       <CategoryCreate></CategoryCreate>
       <CategoryIndex></CategoryIndex>
+      <ProductIndex></ProductIndex>
     </>
   )
 }
