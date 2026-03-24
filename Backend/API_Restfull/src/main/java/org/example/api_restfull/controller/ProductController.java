@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/products")
+@CrossOrigin(origins = "http://localhost:5173")
 @RequiredArgsConstructor
 public class ProductController {
 
@@ -24,7 +25,10 @@ public class ProductController {
     public ResponseEntity<List<ProductDTO>> getByCategory(@PathVariable Long categoryId) {
         return ResponseEntity.ok(productService.getByCategory(categoryId));
     }
-
+    @GetMapping("/search")
+    public ResponseEntity<List<ProductDTO>> search(@RequestParam(required = false, defaultValue = "") String name) {
+        return ResponseEntity.ok(productService.searchByName(name));
+    }
     @PostMapping
     public ResponseEntity<ProductDTO> create(@RequestBody ProductDTO dto) {
         return ResponseEntity.status(HttpStatus.CREATED).body(productService.create(dto));

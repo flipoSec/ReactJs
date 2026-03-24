@@ -19,9 +19,17 @@ public class ProductService {
     private final ProductRepository productRepository;
     private final CategoryRepository categoryRepository;
 
+
     public List<ProductDTO> getAll() {
         return productRepository.findAll()
                 .stream().map(this::toDTO).collect(Collectors.toList());
+    }
+
+    public List<ProductDTO> searchByName(String name) {
+        return productRepository.findByNameContainingIgnoreCase(name)
+                .stream()
+                .map(this::toDTO)
+                .collect(Collectors.toList());
     }
 
     public List<ProductDTO> getByCategory(Long categoryId) {
