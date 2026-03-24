@@ -12,10 +12,10 @@ function App() {
 
   return (
     <>
-    
+      <ProductIndex></ProductIndex>
       <CategoryCreate></CategoryCreate>
       <CategoryIndex></CategoryIndex>
-      <ProductIndex></ProductIndex>
+      
     </>
   )
 }
